@@ -12,6 +12,7 @@ function playMusic() {
 }
 
 function rockPiles() {
+  myMusic.play();
   document.getElementById("underRocks").style.display = "none";
   setTimeout(function () {
     document.getElementById("removeRocks").style.display = "inline-block";
