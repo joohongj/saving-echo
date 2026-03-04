@@ -10,9 +10,7 @@
 - Briefly describe the purpose of the project.
 - Explain the story you are telling through the webpage and the key interactive elements.
 
-## Figma Design
 
-- Provide a link to the Figma design of the webpage.
 
 ## Features
 
