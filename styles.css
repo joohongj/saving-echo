@@ -1,15 +1,15 @@
 .logo img {
   top: 5%;
-  left: 80%;
-  height: 3vw;
+  left: 78%;
+  height: 4vw;
   background-color: transparent;
   position: absolute;
-  animation: wiggle 1s ease-in-out;
+  animation: wiggle 1s ease-in-out infinite;
 }
 
 .logo h1 {
-  color: rgb(92, 44, 7);
-  top: 3%;
+  color: rgb(202, 110, 40);
+  top: 5%;
   left: 82%;
   height: 4vw;
   background-color: transparent;
@@ -91,13 +91,13 @@ body {
   position: absolute;
   transform: translate(-50%, -50%);
   background-color: #555;
-  font-size: x-large;
+  font-size: clamp(14px, 4vw, 28px);
   color: white;
   padding: 20px 34px;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
-  /* flash */
+  border-radius: 10px;
+  /* flash ------!!! this doesnt work... */
   transition: background-color 0.2s;
   /* Smooth transition for default state changes */
   animation: flashEffect 1.5s infinite;
@@ -138,6 +138,44 @@ body {
 }
 
 
+@keyframes passBy {
+  0% {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  13% {
+    box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.7);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(100vw);
+    opacity: 0;
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.light-streak {
+  width: 30%;
+  height: 100%;
+  background: rgb(231, 197, 93);
+  position: absolute;
+  top: 30%;
+  animation: passBy 3s linear infinite;
+  filter: blur(300px);
+  /* Creates soft glow */
+}
+
+
+
 /* rock javaScript */
 
 .cover,
@@ -152,10 +190,28 @@ body {
 .cover9,
 .cover10 {
   background-color: transparent;
-  min-width: 70px;
+  /* min-width: 70px; */
   /* ????how can I make the rocks shrink when the window's smaller */
   position: absolute;
-  height: 100%;
+  /* height: 100%; */
+  width: 8vw;
+}
+
+@media (max-width: 600px) {
+
+  .cover,
+  .cover1,
+  .cover2,
+  .cover3,
+  .cover4,
+  .cover5,
+  .cover6,
+  .cover7,
+  .cover8,
+  .cover9,
+  .cover10 {
+    width: 12vw;
+  }
 }
 
 .cover {
@@ -216,14 +272,17 @@ body {
 
 div.rockPiles {
   position: relative;
-  height: 13%;
+  width: 100%;
+  /* height: 13%; */
 }
 
 div.rockPiles img.eachRock {
-  position: absolute;
+  /* position: absolute;
   max-width: 100%;
   max-height: 100%;
-  z-index: 2;
+  z-index: 2; */
+  width: 100%;
+  height: auto;
 }
 
 #blackCat:hover {
